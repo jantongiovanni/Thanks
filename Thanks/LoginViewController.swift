@@ -32,6 +32,17 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onSignIn(_ sender: Any) {
+        let username = userNameField.text ?? ""
+        let password = passwordField.text ?? ""
+        
+        PFUser.logInWithUsername(inBackground: username, password: password) {
+            (user: PFUser?, error: Error?) in
+            if let error = error {
+                print("User Login Failed: " + error.localizedDescription)
+            } else {
+                print("User Logged In Successfully")
+            }
+        }
     }
     
     @IBAction func onSignUp(_ sender: Any) {
@@ -40,8 +51,10 @@ class LoginViewController: UIViewController {
         newUser.username = userNameField.text
         newUser.password = passwordField.text
         
+        
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             self.activityIndicator.startAnimating()
+            self.view.addSubview(self.activityIndicator)
             if let error = error{
                 self.activityIndicator.stopAnimating()
                 print("Sign Up Error: " + error.localizedDescription)
@@ -51,7 +64,7 @@ class LoginViewController: UIViewController {
                     UIApplication.shared.keyWindow?.rootViewController?.present(self.alertController, animated: true)
                 }
             } else {
-                print("User registered successfully")
+                print("User Registered Successfully")
                 self.activityIndicator.stopAnimating()
                 self.performSegue(withIdentifier: "registerSegue", sender: sender)
             }

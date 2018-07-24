@@ -9,6 +9,7 @@ target 'Thanks' do
 
 	pod 'Parse'
 	pod 'ParseUI'
+    pod 'RAMReel'
 
   target 'ThanksTests' do
     inherit! :search_paths
