@@ -18,6 +18,7 @@
 		91691798210670750027DEEF /* ThanksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91691797210670750027DEEF /* ThanksTests.swift */; };
 		916917A3210670750027DEEF /* ThanksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916917A2210670750027DEEF /* ThanksUITests.swift */; };
 		916917B121067D730027DEEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916917B021067D730027DEEF /* LoginViewController.swift */; };
+		916917B321078F110027DEEF /* ProfessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916917B221078F110027DEEF /* ProfessionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		916917A2210670750027DEEF /* ThanksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksUITests.swift; sourceTree = "<group>"; };
 		916917A4210670750027DEEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		916917B021067D730027DEEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		916917B221078F110027DEEF /* ProfessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionViewController.swift; sourceTree = "<group>"; };
 		996D763BF58665B611C6ACAB /* Pods-Thanks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thanks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thanks/Pods-Thanks.debug.xcconfig"; sourceTree = "<group>"; };
 		ADA237B39061B6017D10AE4E /* Pods-Thanks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thanks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thanks/Pods-Thanks.release.xcconfig"; sourceTree = "<group>"; };
 		C681D9CD8B542CD705FB814C /* Pods-ThanksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThanksUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThanksUITests/Pods-ThanksUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				91691782210670750027DEEF /* AppDelegate.swift */,
 				91691784210670750027DEEF /* ViewController.swift */,
 				91691786210670750027DEEF /* Main.storyboard */,
+				916917B221078F110027DEEF /* ProfessionViewController.swift */,
 				91691789210670750027DEEF /* Assets.xcassets */,
 				9169178B210670750027DEEF /* LaunchScreen.storyboard */,
 				9169178E210670750027DEEF /* Info.plist */,
@@ -385,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916917B321078F110027DEEF /* ProfessionViewController.swift in Sources */,
 				916917B121067D730027DEEF /* LoginViewController.swift in Sources */,
 				91691785210670750027DEEF /* ViewController.swift in Sources */,
 				91691783210670750027DEEF /* AppDelegate.swift in Sources */,

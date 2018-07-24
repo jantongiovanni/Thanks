@@ -13,11 +13,16 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    let alertController = UIAlertController(title: "Error", message: "Something went wrong when creating your profile. Please try again", preferredStyle: .alert)
+    let accountAlreadyExists = UIAlertController(title: "Error", message: "An account with this username already exists. Please try another", preferredStyle: .alert)
+    let okButton = UIAlertAction(title: "OK", style: .default) { (action) in}
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        accountAlreadyExists.addAction(okButton)
+        alertController.addAction(okButton)
         // Do any additional setup after loading the view.
     }
 
@@ -35,25 +40,36 @@ class LoginViewController: UIViewController {
         newUser.username = userNameField.text
         newUser.password = passwordField.text
         
-        //TODO : Use signupinback with block to enforce unique name
         newUser.signUpInBackground { (success: Bool, error: Error?) in
+            self.activityIndicator.startAnimating()
             if let error = error{
+                self.activityIndicator.stopAnimating()
                 print("Sign Up Error: " + error.localizedDescription)
+                if (error as NSError).code == 202 {
+                    UIApplication.shared.keyWindow?.rootViewController?.present(self.accountAlreadyExists, animated: true)
+                } else {
+                    UIApplication.shared.keyWindow?.rootViewController?.present(self.alertController, animated: true)
+                }
             } else {
                 print("User registered successfully")
-                //TODO : Segue
+                self.activityIndicator.stopAnimating()
+                self.performSegue(withIdentifier: "registerSegue", sender: sender)
             }
         }
         
     }
-    /*
+    
+    
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "registerSegue" {
+            if let professionViewController = segue.destination as? ProfessionViewController {
+                //do something
+            }
+        }
     }
-    */
+    
 
 }
